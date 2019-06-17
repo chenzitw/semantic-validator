@@ -1,0 +1,14 @@
+{
+  "name": "semantic-validator",
+  "version": "0.0.0",
+  "description": "A functional semantic validator tool for validation of several types and rich content.",
+  "author": "ChenZi <chenzi@ubun.tw>",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/chenzitw/semantic-validator.git",
+    "type": "git"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "dependencies": {}
+}

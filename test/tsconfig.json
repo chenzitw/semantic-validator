@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "paths": {
+      "semantic-validator": [
+        "../src"
+      ],
+      "semantic-validator/*": [
+        "../src/*"
+      ]
+    },
+  },
+  "include": [
+      "**/*.ts"
+  ]
+}

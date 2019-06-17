@@ -1,0 +1,71 @@
+{
+  "env": {
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": false
+    }
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "max-len": [
+      "error",
+      {
+        "code": 100
+      }
+    ],
+    "prefer-destructuring": "off",
+    "dot-notation": "off",
+    "object-shorthand": "off",
+    "import/prefer-default-export": "off",
+    "import/no-named-as-default-member": "off",
+    "@typescript-eslint/indent": [
+      "error",
+      2
+    ],
+    "@typescript-eslint/prefer-interface": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn",
+      {
+        "allowExpressions": true,
+        "allowTypedFunctionExpressions": true,
+        "allowHigherOrderFunctions": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "test/**/*.ts"
+      ],
+      "env": {
+        "es6": true,
+        "jest": true
+      },
+      "settings": {
+        "import/resolver": {
+          "typescript": {
+            "directory": "./test"
+          }
+        }
+      }
+    }
+  ]
+}

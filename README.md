@@ -73,7 +73,7 @@ validate({ id: 'abc', name: 'Agent K' }); // => false;
 
 #### Basic
 
-**so**  
+**op: so**  
 Will be valid when the validator returns true. It is usually not necessary.    
 ```javascript
 op.so(validator)
@@ -85,7 +85,7 @@ validate('hello'); // => true
 validate('bye'); // => false
 ```
 
-**not**  
+**op: not**  
 Will be valid when the validator returns false.  
 ```javascript
 op.not(validator)
@@ -97,7 +97,7 @@ validate('bye'); // => true
 validate('hello'); // => false
 ```
 
-**and**  
+**op: and**  
 Will be valid when all validators return true.  
 ```javascript
 op.and(validator1, validator2, ...validators)
@@ -110,7 +110,7 @@ validate(80); // => false
 validate(123.456); // => false
 ```
 
-**or**  
+**op: or**  
 Will be valid when any validator returns true.  
 ```javascript
 op.or(validator1, validator2, ...validators)
@@ -123,7 +123,7 @@ validate(123); // => true
 validate('abc'); // => false
 ```
 
-**every**  
+**op: every**  
 Will be valid when validator returns true on all elements in the array.  
 ```javascript
 op.every(validator)
@@ -135,7 +135,7 @@ validate([1, 2, 3]); // => true
 validate([1, 2.22, 3]); // => false
 ```
 
-**some**  
+**op: some**  
 Will be valid when validator returns true on any element in the array.  
 ```javascript
 op.some(validator)
@@ -148,7 +148,7 @@ validate([1.11, 2, 3.33]); // => true
 validate([1.11, 2.22, 3.33]); // => false
 ```
 
-**shape**  
+**op: shape**  
 Will be valid when value is an object and all validator returns true on each key.  
 ```javascript
 op.shape({
@@ -169,7 +169,7 @@ validate({ id: 123 }); // => false
 validate({ id: 123, name: 456 }); // => false
 ```
 
-**exact**  
+**op: exact**  
 Will be valid when value is an object with specific keys and all validator returns true on each key.  
 ```javascript
 op.exact({
@@ -193,7 +193,7 @@ validate({ id: 123, name: 456 }); // => false
 
 #### Converter
 
-**convert**  
+**op: convert**  
 Will be valid when successfully converts the value and the validation is success.  
 ```javascript
 op.convert(converter, validator)
@@ -208,7 +208,7 @@ validate('150'); // => true
 validate('50'); // => false
 ```
 
-**to float**  
+**op: to float**  
 Will be valid when successfully converts to a float and the validation is success.  
 ```javascript
 op.toFloat(validator)
@@ -221,7 +221,7 @@ validate('two'); // => false
 validate('0.8'); // => false
 ```
 
-**to integer**  
+**op: to integer**  
 Will be valid when successfully converts to an integer and the validation is success.  
 ```javascript
 op.toInteger(validator)
@@ -235,7 +235,7 @@ validate('123.456'); // => false
 validate('50'); // => false
 ```
 
-**to length**  
+**op: to length**  
 Will be valid when successfully get the length of an array or string and the validation is success.  
 ```javascript
 op.toLength(validator)
@@ -250,7 +250,7 @@ validate('ab'); // => false
 validate(3); // => false
 ```
 
-**to split**  
+**op: to split**  
 Will be valid when successfully split to the array and the validation is success.  
 ```javascript
 op.toSplit(separator, validator)
@@ -263,7 +263,7 @@ validate('candy,cookie,tea'); // => false
 validate(123); // => false
 ```
 
-**to keys**  
+**op: to keys**  
 Will be valid when successfully get keys of an object and the validation is success.  
 ```javascript
 op.toKeys(validator)
@@ -275,7 +275,7 @@ validate({ id: 123, name: 'Mario' }); // => true
 validate({ id: 123, name: 'Mario', age: 20 }); // => false
 ```
 
-**to values**  
+**op: to values**  
 Will be valid when successfully get values of an object and the validation is success.  
 ```javascript
 op.toValues(validator)
@@ -291,7 +291,7 @@ validate({ people: 640, seats: 'many' }); // => false
 
 #### Basic
 
-**same**  
+**is: same**  
 Will be valid when base value and compare value are the same by using the SameValueZero algorithm.  
 ```javascript
 is.same(baseValue)
@@ -302,7 +302,7 @@ const validate = is.same('hello');
 validate('hello'); // => true
 ```
 
-**one of**  
+**is: one of**  
 Will be valid when one of base values and compare value are the same by using the SameValueZero algorithm.  
 ```javascript
 is.oneOf(...baseValues)
@@ -313,7 +313,7 @@ const validate = is.oneOf(100, '100', 'one hundred');
 validate('100'); // => true
 ```
 
-**defined**  
+**is: defined**  
 Will be valid when the value is defined (not undefined).  
 ```javascript
 is.defined()
@@ -325,7 +325,7 @@ validate(123); // => true
 validate(undefined); // => false
 ```
 
-**not defined**  
+**is: not defined**  
 Will be valid when the value is not defined (undefined).  
 ```javascript
 is.notDefined()
@@ -337,7 +337,7 @@ validate(undefined); // => true
 validate(123); // => false
 ```
 
-**nil**  
+**is: nil**  
 Will be valid when the value is null.  
 ```javascript
 is.nil()
@@ -349,7 +349,7 @@ validate(null); // => true
 validate(123); // => false
 ```
 
-**bool**  
+**is: bool**  
 Will be valid when the value is a boolean.  
 ```javascript
 is.bool()
@@ -361,7 +361,7 @@ validate(false); // => true
 validate(123); // => false
 ```
 
-**number**  
+**is: number**  
 Will be valid when the value is a number.  
 ```javascript
 is.number()
@@ -373,7 +373,7 @@ validate(123); // => true
 validate('abc'); // => false
 ```
 
-**string**  
+**is: string**  
 Will be valid when the value is a string.  
 ```javascript
 is.string()
@@ -385,7 +385,7 @@ validate('abc'); // => true
 validate(123); // => false
 ```
 
-**object**  
+**is: object**  
 Will be valid when the value is a non null object.  
 ```javascript
 is.object()
@@ -399,7 +399,7 @@ validate(null); // => false
 validate(123); // => false
 ```
 
-**func**  
+**is: func**  
 Will be valid when the value is a function.  
 ```javascript
 is.func()
@@ -411,7 +411,7 @@ validate(() => {}); // => true
 validate(123); // => false
 ```
 
-**symbol**  
+**is: symbol**  
 Will be valid when the value is a symbol.  
 ```javascript
 is.symbol()
@@ -423,7 +423,7 @@ validate(Symbol('abc')); // => true
 validate('abc'); // => false
 ```
 
-**instance of**  
+**is: instance of**  
 Will be valid when the value is the instance of a constructor.  
 ```javascript
 is.instanceOf(constructor)
@@ -435,7 +435,7 @@ validate(new Date()); // => true
 validate(123); // => false
 ```
 
-**float**  
+**is: float**  
 Will be valid when the value is a float and not NaN or infinity.  
 ```javascript
 is.float()
@@ -448,7 +448,7 @@ validate(123); // => true
 validate('123'); // => false
 ```
 
-**integer**  
+**is: integer**  
 Will be valid when the value is a integer and not NaN or infinity.  
 ```javascript
 is.integer()
@@ -460,7 +460,7 @@ validate(123); // => true
 validate(123.456); // => false
 ```
 
-**array**  
+**is: array**  
 Will be valid when the value is an array object.  
 ```javascript
 is.array()
@@ -471,7 +471,7 @@ const validate = is.array();
 validate([1, 2, 3]); // => true
 ```
 
-**date**  
+**is: date**  
 Will be valid when the value is a valid date object.  
 ```javascript
 is.date()
@@ -487,7 +487,7 @@ validate('invalid date'); // => false
 
 #### Math
 
-**equal to**  
+**is: equal to**  
 Will be valid when the value is equal to the number.  
 ```javascript
 is.equalTo(num)
@@ -499,7 +499,7 @@ validate(100); // true
 validate(200); // false
 ```
 
-**greater than**  
+**is: greater than**  
 Will be valid when the value is greater than the number.  
 ```javascript
 is.greaterThan(num)
@@ -511,7 +511,7 @@ validate(101); // => true
 validate(100); // => false
 ```
 
-**at least**  
+**is: at least**  
 Will be valid when the value is at least the number.  
 ```javascript
 is.atLeast(num)
@@ -523,7 +523,7 @@ validate(100); // => true
 validate(99); // => false
 ```
 
-**less than**  
+**is: less than**  
 Will be valid when the value is less than the number.  
 ```javascript
 is.lessThan(num)
@@ -535,7 +535,7 @@ validate(199); // => true
 validate(200); // => false
 ```
 
-**at most**  
+**is: at most**  
 Will be valid when the value is at most the number.  
 ```javascript
 is.atMost(num)
@@ -547,7 +547,7 @@ validate(200); // => true
 validate(201); // => false
 ```
 
-**between**  
+**is: between**  
 Will be valid when the value is between the numbers.  
 ```javascript
 is.between(min, max)
@@ -560,7 +560,7 @@ validate(0); // => false
 validate(10); // => false
 ```
 
-**from to**  
+**is: from to**  
 Will be valid when the value is from and to the numbers.  
 ```javascript
 is.fromTo(min, max)
@@ -577,7 +577,7 @@ validate(10); // => false
 
 #### Text
 
-**match**  
+**is: match**  
 Will be valid when the value matches the regular expression.  
 ```javascript
 is.match(regexp)
@@ -589,7 +589,7 @@ validate('bat'); // => true
 validate('brt'); // => false
 ```
 
-**starts with**  
+**is: starts with**  
 Will be valid when the value starts with the wording.  
 ```javascript
 is.startsWith(wording)
@@ -601,7 +601,7 @@ validate('network'); // => true
 validate('artwork'); // => false
 ```
 
-**ends with**  
+**is: ends with**  
 Will be valid when the value ends with the wording.  
 ```javascript
 is.endsWith(wording)
@@ -613,7 +613,7 @@ validate('firefox'); // => true
 validate('firewall'); // => false
 ```
 
-**contains**  
+**is: contains**  
 Will be valid when the value contains the wording.  
 ```javascript
 is.contains(wording)
@@ -628,7 +628,7 @@ validate('behave'); // => false
 
 #### List
 
-**includes**  
+**is: includes**  
 Will be valid when the array value includes all includings.  
 ```javascript
 is.includes(including1, including2, ...includings)
@@ -640,7 +640,7 @@ validate([0, 10, 20, 30, 40]); // => true
 validate([0, 20, 40]); // => false
 ```
 
-**excludes**  
+**is: excludes**  
 Will be valid when the array value excludes all excludings.  
 ```javascript
 is.excludes(excluding1, excluding2, ...excludings)
@@ -652,7 +652,7 @@ validate([0, 10, 20, 30]); // => true
 validate([5, 10]); // => false
 ```
 
-**restricted by**  
+**is: restricted by**  
 Will be valid when the array value is restricted by allowed items.  
 ```javascript
 is.restrictedBy(allowedItem1, allowedItem2, ...allowedItems)
@@ -664,7 +664,7 @@ validate([10, 20]); // => true
 validate([5, 10, 15, 20, 25, 30]); // => false
 ```
 
-**distinct**  
+**is: distinct**  
 Will be valid when items of array value are all different.  
 ```javascript
 is.distinct()

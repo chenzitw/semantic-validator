@@ -1,6 +1,6 @@
 {
-  "name": "semantic-validator",
-  "version": "0.0.0",
+  "name": "semantic-validator-dev",
+  "version": "0.0.1",
   "description": "A functional semantic validator tool for validation of several types and rich content.",
   "private": true,
   "author": "ChenZi <chenzi@ubun.tw>",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "ts-node --files -O '{\"module\":\"commonjs\"}' -r tsconfig-paths/register ./src",
-    "build": "rm -rf ./dist && tsc --build && cp ./package.prod.json ./dist/package.json",
+    "build": "rm -rf ./dist && tsc --build && cp ./package.prod.json ./dist/package.json && cp ./README.md ./dist/README.md && cp ./LICENSE ./dist/LICENSE",
     "publish": "npm publish dist",
     "test": "jest"
   },

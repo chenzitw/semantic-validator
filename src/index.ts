@@ -1,6 +1,12 @@
+import op from './op';
+import is from './is';
 
-const bootstrap = (): void => {
-  console.log('Hello World!');
+export {
+  op,
+  is,
 };
 
-bootstrap();
+export default {
+  op,
+  is,
+};

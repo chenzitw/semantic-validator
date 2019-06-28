@@ -1,5 +1,5 @@
 {
-  "name": "semantic-validator",
+  "name": "semantic-validator-dev",
   "version": "0.0.0",
   "description": "A functional semantic validator tool for validation of several types and rich content.",
   "private": true,

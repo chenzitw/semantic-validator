@@ -3,11 +3,11 @@ import {
 } from '../definition';
 import {
   isSameValueZero,
-  validateNumber,
 } from '../utils';
 import {
   definedValidator,
   notDefinedValidator,
+  nulValidator,
   nilValidator,
   booleanValidator,
   numberValidator,
@@ -37,6 +37,8 @@ export const defined = (): Validator => definedValidator;
 
 export const notDefined = (): Validator => notDefinedValidator;
 
+export const nul = (): Validator => nulValidator;
+
 export const nil = (): Validator => nilValidator;
 
 export const bool = (): Validator => booleanValidator;
@@ -53,39 +55,9 @@ export const symbol = (): Validator => symbolValidator;
 
 export const instanceOf = (constructor: any): Validator => val => (val instanceof constructor);
 
-export const float = (
-  options?: {
-    equalTo?: number;
-    greaterThan?: number;
-    atLeast?: number;
-    lessThan?: number;
-    atMost?: number;
-    between?: [number, number];
-    fromTo?: [number, number];
-  },
-): Validator => {
-  if ((options === undefined) || (Object.keys(options).length === 0)) {
-    return floatValidator;
-  }
-  return (val: any) => (Number.isFinite(val) && validateNumber(val, options));
-};
+export const float = (): Validator => floatValidator;
 
-export const integer = (
-  options?: {
-    equalTo?: number;
-    greaterThan?: number;
-    atLeast?: number;
-    lessThan?: number;
-    atMost?: number;
-    between?: [number, number];
-    fromTo?: [number, number];
-  },
-): Validator => {
-  if ((options === undefined) || (Object.keys(options).length === 0)) {
-    return integerValidator;
-  }
-  return (val: any) => (Number.isInteger(val) && validateNumber(val, options));
-};
+export const integer = (): Validator => integerValidator;
 
 export const array = (): Validator => arrayValidator;
 

@@ -50,15 +50,15 @@ describe('basic validator operators', () => {
 
   describe('op: or', () => {
     const is = {
-      nil: () => (val: any) => (val === null),
+      nul: () => (val: any) => (val === null),
       integer: () => (val: any) => Number.isInteger(val),
     };
     it('should return true when any validators return true', () => {
-      expect(or(is.nil(), is.integer())(null)).toBe(true);
-      expect(or(is.nil(), is.integer())(123)).toBe(true);
+      expect(or(is.nul(), is.integer())(null)).toBe(true);
+      expect(or(is.nul(), is.integer())(123)).toBe(true);
     });
     it('should return false when not any validators return true', () => {
-      expect(or(is.nil(), is.integer())('abc')).toBe(false);
+      expect(or(is.nul(), is.integer())('abc')).toBe(false);
     });
   });
 

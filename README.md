@@ -1,4 +1,4 @@
-#Semantic Validator
+# Semantic Validator
 
 A functional semantic validator tool for validation of several types and rich content, 
 inspired by prop-types from React.  
@@ -117,7 +117,7 @@ op.or(validator1, validator2, ...validators)
 ```
 Example:   
 ```javascript
-const validate = op.or(is.nil(), is.integer());
+const validate = op.or(is.nul(), is.integer());
 validate(null); // => true
 validate(123); // => true
 validate('abc'); // => false
@@ -337,14 +337,14 @@ validate(undefined); // => true
 validate(123); // => false
 ```
 
-**is: nil**  
+**is: nul**  
 Will be valid when the value is null.  
 ```javascript
-is.nil()
+is.nul()
 ```
 Example:   
 ```javascript
-const validate = is.nil();
+const validate = is.nul();
 validate(null); // => true
 validate(123); // => false
 ```

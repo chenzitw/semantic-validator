@@ -1,6 +1,6 @@
 {
   "name": "semantic-validator-dev",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A functional semantic validator tool for validation of several types and rich content.",
   "private": true,
   "author": "ChenZi <chenzi@ubun.tw>",
@@ -11,9 +11,11 @@
   },
   "scripts": {
     "start": "ts-node --files -O '{\"module\":\"commonjs\"}' -r tsconfig-paths/register ./src",
+    "lint": "tsc --noEmit && eslint {src,test}/**/* --quiet",
+    "test": "jest --ForceExit",
+    "test:coveralls": "cat ./coverage/lcov.info | coveralls",
     "build": "rm -rf ./dist && tsc --build && cp ./package.prod.json ./dist/package.json && cp ./README.md ./dist/README.md && cp ./LICENSE ./dist/LICENSE",
-    "publish": "npm publish dist",
-    "test": "jest"
+    "publish": "npm publish dist"
   },
   "main": "index.js",
   "devDependencies": {
@@ -22,6 +24,7 @@
     "@types/validator": "^10.11.1",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
+    "coveralls": "^3.0.4",
     "eslint": "^6.0.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-import-resolver-typescript": "^1.1.1",

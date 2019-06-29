@@ -21,8 +21,12 @@ export const notDefinedValidator = (
   (val: any): boolean => (typeof val === 'undefined')
 );
 
-export const nilValidator = (
+export const nulValidator = (
   (val: any): val is null => (val === null)
+);
+
+export const nilValidator = (
+  (val: any): val is (undefined | null) => ((typeof val === 'undefined') || (val === null))
 );
 
 export const booleanValidator = (

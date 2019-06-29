@@ -25,35 +25,3 @@ export const isShapeOrExactValidation = (validation: any): validation is object 
   || (validation === null)
   || Object.keys(validation).every(validator => typeof validator === 'function')
 );
-
-export const validateNumber = (
-  val: number,
-  options?: {
-    equalTo?: number;
-    greaterThan?: number;
-    atLeast?: number;
-    lessThan?: number;
-    atMost?: number;
-    between?: [number, number];
-    fromTo?: [number, number];
-  },
-): boolean => {
-  if ((options === undefined) || (Object.keys(options).length === 0)) {
-    return true;
-  }
-  return (true
-    && ((options && options.equalTo !== undefined) ? (val === options.equalTo) : true)
-    && ((options && options.greaterThan !== undefined) ? (val > options.greaterThan) : true)
-    && ((options && options.atLeast !== undefined) ? (val >= options.atLeast) : true)
-    && ((options && options.lessThan !== undefined) ? (val < options.lessThan) : true)
-    && ((options && options.atMost !== undefined) ? (val <= options.atMost) : true)
-    && ((options && options.between !== undefined) ? (true
-      && (val > Math.min(...options.between))
-      && (val < Math.max(...options.between))
-    ) : true)
-    && ((options && options.fromTo !== undefined) ? (true
-      && (val >= Math.min(...options.fromTo))
-      && (val <= Math.max(...options.fromTo))
-    ) : true)
-  );
-};

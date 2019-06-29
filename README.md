@@ -72,13 +72,12 @@ validate({ id: '6fad3a7b-161b-5e10-b265-8d522f3f35b5', name: 'Agent K' }); // =>
 validate({ id: 'abc', name: 'Agent K' }); // => false;
 ```
 
-
 ### Validator operators
 
 #### Basic
 
 **op: so**  
-Will be valid when the validator returns true. It is usually not necessary.    
+Will be valid when the validator returns true. It is usually not necessary.  
 ```javascript
 op.so(validator)
 ```

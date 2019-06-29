@@ -55,5 +55,8 @@ node_modules/
 .vscode
 .idea
 
+# Test coverage directory
+coverage
+
 # Distribution files
 dist

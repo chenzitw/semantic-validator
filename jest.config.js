@@ -9,5 +9,11 @@ module.exports = {
     'ts-jest': {
       tsConfig: '<rootDir>/test/tsconfig.json'
     }
-  }
+  },
+  collectCoverage: true,
+  collectCoverageFrom: [
+    '<rootDir>/src/op/**/*.ts',
+    '<rootDir>/src/is/**/*.ts',
+  ],
+  coverageReporters: ['lcov', 'text-summary'],
 };

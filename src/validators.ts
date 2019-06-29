@@ -25,6 +25,10 @@ export const nulValidator = (
   (val: any): val is null => (val === null)
 );
 
+export const nilValidator = (
+  (val: any): val is (undefined | null) => ((typeof val === 'undefined') || (val === null))
+);
+
 export const booleanValidator = (
   (val: any): val is boolean => (typeof val === 'boolean')
 );

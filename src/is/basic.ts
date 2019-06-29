@@ -9,6 +9,7 @@ import {
   definedValidator,
   notDefinedValidator,
   nulValidator,
+  nilValidator,
   booleanValidator,
   numberValidator,
   stringValidator,
@@ -38,6 +39,8 @@ export const defined = (): Validator => definedValidator;
 export const notDefined = (): Validator => notDefinedValidator;
 
 export const nul = (): Validator => nulValidator;
+
+export const nil = (): Validator => nilValidator;
 
 export const bool = (): Validator => booleanValidator;
 

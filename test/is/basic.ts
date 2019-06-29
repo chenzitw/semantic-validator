@@ -4,6 +4,7 @@ import {
   defined,
   notDefined,
   nul,
+  nil,
   bool,
   number,
   string,
@@ -85,6 +86,16 @@ describe('basic validator creators', () => {
     it('should return false when the value is not nul', () => {
       expect(nul()(undefined)).toBe(false);
       expect(nul()(true)).toBe(false);
+    });
+  });
+
+  describe('is: nil', () => {
+    it('should return true when the value is nil', () => {
+      expect(nil()(null)).toBe(true);
+      expect(nil()(undefined)).toBe(true);
+    });
+    it('should return false when the value is not nil', () => {
+      expect(nil()(true)).toBe(false);
     });
   });
 

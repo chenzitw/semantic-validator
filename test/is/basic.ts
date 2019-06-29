@@ -3,7 +3,7 @@ import {
   oneOf,
   defined,
   notDefined,
-  nil,
+  nul,
   bool,
   number,
   string,
@@ -78,13 +78,13 @@ describe('basic validator creators', () => {
     });
   });
 
-  describe('is: nil', () => {
-    it('should return true when the value is nil', () => {
-      expect(nil()(null)).toBe(true);
+  describe('is: nul', () => {
+    it('should return true when the value is nul', () => {
+      expect(nul()(null)).toBe(true);
     });
-    it('should return false when the value is not nil', () => {
-      expect(nil()(undefined)).toBe(false);
-      expect(nil()(true)).toBe(false);
+    it('should return false when the value is not nul', () => {
+      expect(nul()(undefined)).toBe(false);
+      expect(nul()(true)).toBe(false);
     });
   });
 

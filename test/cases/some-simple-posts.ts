@@ -6,7 +6,7 @@ describe('normal case 01', (): void => {
       id: is.integer({ atLeast: 1 }),
       content: is.string(),
       attachement: op.or(
-        is.nil(),
+        is.nul(),
         op.exact({
           type: is.same('image'),
           url: is.string(),

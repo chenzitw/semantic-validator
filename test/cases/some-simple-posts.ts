@@ -3,7 +3,7 @@ import { op, is } from 'semantic-validator';
 describe('normal case 01', (): void => {
   const validator = op.every(
     op.shape({
-      id: is.integer({ atLeast: 1 }),
+      id: is.integer(),
       content: is.string(),
       attachement: op.or(
         is.nul(),

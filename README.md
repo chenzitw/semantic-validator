@@ -3,6 +3,10 @@
 A functional semantic validator tool for validation of several types and rich content, 
 inspired by prop-types from React.  
 
+[![npm version](https://badge.fury.io/js/semantic-validator.svg)](https://badge.fury.io/js/semantic-validator)
+[![Build Status](https://travis-ci.com/chenzitw/semantic-validator.svg?branch=master)](https://travis-ci.com/chenzitw/semantic-validator)
+[![Coverage Status](https://coveralls.io/repos/github/chenzitw/semantic-validator/badge.svg?branch=master)](https://coveralls.io/github/chenzitw/semantic-validator?branch=master)
+
 
 ## Get started
 

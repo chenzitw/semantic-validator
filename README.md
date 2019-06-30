@@ -94,7 +94,7 @@ validate({ id: 'abc', name: 'Agent K' }); // => false;
 | > **`op.toSplit(separator, validator)`**                         | Pass the validator after splitted the string as an array.        |
 | > **`op.toKeys(validator)`**                                     | Pass the validator after converted to keys of an object.         |
 | > **`op.toValues(validator)`**                                   | Pass the validator after converted to values of an object.       |
-| **Basic validator creator**                                      |                                                                  |
+| **Basic validator creators**                                     |                                                                  |
 | > **`is.same(value)`**                                           | Is the same as the base value?                                   |
 | > **`is.oneOf(...values)`**                                      | Is the same as any base values?                                  |
 | > **`is.defined()`**                                             | Is defined (not undefined)?                                      |

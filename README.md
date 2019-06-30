@@ -352,6 +352,19 @@ validate(null); // => true
 validate(123); // => false
 ```
 
+**is: nil**  
+Will be valid when the value is undefined or null.  
+```javascript
+is.nil()
+```
+Example:   
+```javascript
+const validate = is.nil();
+validate(undefined); // => true
+validate(null); // => true
+validate(123); // => false
+```
+
 **is: bool**  
 Will be valid when the value is a boolean.  
 ```javascript

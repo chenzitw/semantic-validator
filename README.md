@@ -72,7 +72,67 @@ validate({ id: '6fad3a7b-161b-5e10-b265-8d522f3f35b5', name: 'Agent K' }); // =>
 validate({ id: 'abc', name: 'Agent K' }); // => false;
 ```
 
-### Validator operators
+
+### Cheatsheet
+
+| Method                                                           | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| **Basic validator operators**                                    |                                                                  |
+| > **`op.so(validator)`**                                         | Pass the validator.                                              |
+| > **`op.not(validator)`**                                        | Not pass the validator.                                          |
+| > **`op.and(...validators)`**                                    | Pass all validators.                                             |
+| > **`op.or(...validators)`**                                     | Pass any validators.                                             |
+| > **`op.every(validator)`**                                      | Pass the validator on all elements in an array.                  |
+| > **`op.some(validator)`**                                       | Pass the validator on any elements in an array.                  |
+| > **`op.shape({ ...validatorOfKeys })`**                         | Pass all validators for each properties of an object.            |
+| > **`op.exact({ ...validatorOfKeys })`**                         | Pass all validators for each properties of an exact object.      |
+| **Converter validator operators**                                |                                                                  |
+| > **`op.convert(converter, validator)`**                         | Pass the validator after converted.                              |
+| > **`op.toFloat(validator)`**                                    | Pass the validator after converted to a float.                   |
+| > **`op.toInteger(validator)`**                                  | Pass the validator after converted to an integer.                |
+| > **`op.toLength(validator)`**                                   | Pass the validator after converted to the length.                |
+| > **`op.toSplit(separator, validator)`**                         | Pass the validator after splitted the string as an array.        |
+| > **`op.toKeys(validator)`**                                     | Pass the validator after converted to keys of an object.         |
+| > **`op.toValues(validator)`**                                   | Pass the validator after converted to values of an object.       |
+| **Basic validator creator**                                      |                                                                  |
+| > **`is.same(value)`**                                           | Is the same as the base value?                                   |
+| > **`is.oneOf(...values)`**                                      | Is the same as any base values?                                  |
+| > **`is.defined()`**                                             | Is defined (not undefined)?                                      |
+| > **`is.notDefined()`**                                          | Is undefined?                                                    |
+| > **`is.nul()`**                                                 | Is null?                                                         |
+| > **`is.nil()`**                                                 | Is undefined or null?                                            |
+| > **`is.bool()`**                                                | Is a boolean?                                                    |
+| > **`is.number()`**                                              | Is a number?                                                     |
+| > **`is.string()`**                                              | Is a string?                                                     |
+| > **`is.object()`**                                              | Is a non null object?                                            |
+| > **`is.func()`**                                                | Is a function?                                                   |
+| > **`is.symbol()`**                                              | Is a symbol?                                                     |
+| > **`is.instanceOf(constructor)`**                               | Is an instance of the constructor (Class)?                       |
+| > **`is.float()`**                                               | Is a valid (not `NaN` or `Infinity`) float?                      |
+| > **`is.integer()`**                                             | Is a valid (not `NaN` or `Infinity`) integer?                    |
+| > **`is.array()`**                                               | Is an array?                                                     |
+| > **`is.date()`**                                                | Is a valid (not `Invalid Date`) date object?                     |
+| **Math validator creators**                                      |                                                                  |
+| > **`is.equalTo(num)`**                                          | Is the number equal to the base number?                          |
+| > **`is.greaterThan(num)`**                                      | Is the number greater than the base number?                      |
+| > **`is.atLeast(num)`**                                          | Is the number at least the base number?                          |
+| > **`is.lessThan(num)`**                                         | Is the number less than the base number?                         |
+| > **`is.atMost(num)`**                                           | Is the number at most the base number?                           |
+| > **`is.between(min, max)`**                                     | Is the number between the base numbers?                          |
+| > **`is.fromTo(min, max)`**                                      | Is the number from and to the base numbers?                      |
+| **Text validator creators**                                      |                                                                  |
+| > **`is.match(regexp)`**                                         | Is the string match the regular expression?                      |
+| > **`is.startsWith(wording)`**                                   | Is the string starts with the wording?                           |
+| > **`is.endsWith(wording)`**                                     | Is the string ends with the wording?                             |
+| > **`is.contains(wording)`**                                     | Is the string contains the wording?                              |
+| **List validator creators**                                      |                                                                  |
+| > **`is.includes(...includings)`**                               | Is the array includes all includings?                            |
+| > **`is.excludes(...excludings)`**                               | Is the array excludes all excludings?                            |
+| > **`is.restrictedBy(...allowedItems)`**                         | Is the array only includes allowed items?                        |
+| > **`is.distinct()`**                                            | Is items of the array are all different?                         |
+
+
+### Validator operator reference
 
 #### Basic
 
@@ -290,7 +350,8 @@ validate({ people: 64, seats: 80 }); // => true
 validate({ people: 640, seats: 'many' }); // => false
 ```
 
-### Validator creators
+
+### Validator creator reference
 
 #### Basic
 

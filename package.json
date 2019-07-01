@@ -14,10 +14,9 @@
     "lint": "tsc --noEmit && eslint {src,test}/**/* --quiet",
     "test": "jest --ForceExit",
     "test:coveralls": "cat ./coverage/lcov.info | coveralls",
-    "build": "rm -rf ./dist && tsc --build && cp ./package.prod.json ./dist/package.json && cp ./README.md ./dist/README.md && cp ./LICENSE ./dist/LICENSE",
+    "build": "bash ./scripts/build.sh",
     "publish": "npm publish dist"
   },
-  "main": "index.js",
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "@types/node": "^12.0.10",

@@ -10,6 +10,8 @@ inspired by prop-types from React.
 
 ## Get started
 
+### Using NPM or Yarn
+
 First, install it via npm.  
 ```sh
 npm i semantic-validator
@@ -21,6 +23,23 @@ import { op, is } from 'semantic-validator';
 const validate = op.shape({
   id: is.integer(),
   tags: op.every(is.string()),
+});
+```
+
+### Using script tag
+
+First, add a script tag with to the HTML page.
+```html
+<script src="https://unpkg.com/semantic-validator/bundle.js" crossorigin></script>
+```
+Then, just enjoy it.  
+```javascript
+var op = semanticValidator.op;
+var is = semanticValidator.is;
+
+var validate = op.shape({
+  id: is.integer(),
+  tags: op.every(is.string())
 });
 ```
 

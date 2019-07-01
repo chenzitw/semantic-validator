@@ -21,6 +21,11 @@ describe('converter validator operators', () => {
           is.greaterThan(100),
         )('150'),
       ).toBe(true);
+      expect(
+        convert(
+          (numeric: string) => parseFloat(numeric),
+        )('150'),
+      ).toBe(true);
     });
     it('should return true when not successfully convert the value and validate', () => {
       expect(

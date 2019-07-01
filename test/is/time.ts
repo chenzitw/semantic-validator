@@ -27,6 +27,7 @@ describe('time validator creators', () => {
     it('should return false when the date object is not later than the base', () => {
       expect(laterThan(new Date(1500000000000))(new Date(1500000000000))).toBe(false);
       expect(laterThan(new Date(1500000000000))(new Date(1499999999999))).toBe(false);
+      expect(laterThan(new Date('invalid date'))(new Date(1500000000000))).toBe(false);
       expect(laterThan(new Date(1500000000000))(new Date('invalid date'))).toBe(false);
       expect(laterThan(new Date(1500000000000))(123 as any)).toBe(false);
     });
@@ -39,6 +40,7 @@ describe('time validator creators', () => {
     });
     it('should return false when the date object is not at earliest the base', () => {
       expect(atEarliest(new Date(1500000000000))(new Date(1499999999999))).toBe(false);
+      expect(atEarliest(new Date('invalid date'))(new Date(1500000000000))).toBe(false);
       expect(atEarliest(new Date(1500000000000))(new Date('invalid date'))).toBe(false);
       expect(atEarliest(new Date(1500000000000))(123 as any)).toBe(false);
     });
@@ -51,6 +53,7 @@ describe('time validator creators', () => {
     it('should return false when the date object is not earlier than the base', () => {
       expect(earlierThan(new Date(1500000000000))(new Date(1500000000000))).toBe(false);
       expect(earlierThan(new Date(1500000000000))(new Date(1500000000001))).toBe(false);
+      expect(earlierThan(new Date('invalid date'))(new Date(1500000000000))).toBe(false);
       expect(earlierThan(new Date(1500000000000))(new Date('invalid date'))).toBe(false);
       expect(earlierThan(new Date(1500000000000))(123 as any)).toBe(false);
     });
@@ -63,6 +66,7 @@ describe('time validator creators', () => {
     });
     it('should return false when the date object is not at latest the base', () => {
       expect(atLatest(new Date(1500000000000))(new Date(1500000000001))).toBe(false);
+      expect(atLatest(new Date('invalid date'))(new Date(1500000000000))).toBe(false);
       expect(atLatest(new Date(1500000000000))(new Date('invalid date'))).toBe(false);
       expect(atLatest(new Date(1500000000000))(123 as any)).toBe(false);
     });

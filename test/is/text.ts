@@ -11,6 +11,7 @@ describe('text validator creators', () => {
       expect(match(/^b[aeiou]t$/)('bat')).toBe(true);
     });
     it('should return false when the string value not matches the regular expression', () => {
+      expect(match(123 as any)('never')).toBe(false);
       expect(match(/^b[aeiou]t$/)('brt')).toBe(false);
       expect(match(/^b[aeiou]t$/)(123 as any)).toBe(false);
     });
@@ -21,6 +22,7 @@ describe('text validator creators', () => {
       expect(startsWith('net')('network')).toBe(true);
     });
     it('should return false when the string value not starts with the wording', () => {
+      expect(startsWith(123 as any)('never')).toBe(false);
       expect(startsWith('net')('artwork')).toBe(false);
       expect(startsWith('net')(123 as any)).toBe(false);
     });
@@ -31,6 +33,7 @@ describe('text validator creators', () => {
       expect(endsWith('fox')('firefox')).toBe(true);
     });
     it('should return false when the string value not ends with the wording', () => {
+      expect(endsWith(123 as any)('never')).toBe(false);
       expect(endsWith('fox')('firewall')).toBe(false);
       expect(endsWith('fox')(123 as any)).toBe(false);
     });
@@ -41,6 +44,7 @@ describe('text validator creators', () => {
       expect(contains('lie')('believe')).toBe(true);
     });
     it('should return false when the string value not contains the wording', () => {
+      expect(contains(123 as any)('never')).toBe(false);
       expect(contains('lie')('behave')).toBe(false);
       expect(contains('lie')(123 as any)).toBe(false);
     });

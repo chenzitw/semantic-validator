@@ -5,8 +5,3 @@ export {
   op,
   is,
 };
-
-export default {
-  op,
-  is,
-};

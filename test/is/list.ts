@@ -3,7 +3,7 @@ import {
   excludes,
   restrictedBy,
   distinct,
-} from 'semantic-validator/is/list';
+} from 'semantic-validator/lib/is/list';
 
 describe('list validator creators', () => {
   describe('is: includes', () => {

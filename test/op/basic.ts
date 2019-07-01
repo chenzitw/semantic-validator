@@ -7,7 +7,7 @@ import {
   some,
   shape,
   exact,
-} from 'semantic-validator/op/basic';
+} from 'semantic-validator/lib/op/basic';
 
 describe('basic validator operators', () => {
   describe('op: so', () => {

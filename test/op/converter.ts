@@ -7,7 +7,7 @@ import {
   toKeys,
   toValues,
   toDate,
-} from 'semantic-validator/op/converter';
+} from 'semantic-validator/lib/op/converter';
 
 describe('converter validator operators', () => {
   describe('op: convert', () => {

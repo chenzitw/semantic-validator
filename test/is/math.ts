@@ -6,7 +6,7 @@ import {
   atMost,
   between,
   fromTo,
-} from 'semantic-validator/is/math';
+} from 'semantic-validator/lib/is/math';
 
 describe('math validator creators', () => {
   describe('is: equal to', () => {

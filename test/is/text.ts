@@ -3,7 +3,7 @@ import {
   startsWith,
   endsWith,
   contains,
-} from 'semantic-validator/is/text';
+} from 'semantic-validator/lib/is/text';
 
 describe('text validator creators', () => {
   describe('is: match', () => {

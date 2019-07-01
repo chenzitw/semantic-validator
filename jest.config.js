@@ -12,8 +12,8 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: [
-    '<rootDir>/src/op/**/*.ts',
-    '<rootDir>/src/is/**/*.ts',
+    '<rootDir>/src/lib/op/**/*.ts',
+    '<rootDir>/src/lib/is/**/*.ts',
   ],
   coverageReporters: ['lcov', 'text-summary'],
 };

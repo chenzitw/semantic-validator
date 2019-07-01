@@ -154,7 +154,7 @@ validate({ id: 'abc', name: 'Agent K' }); // => false;
 | > **`is.moment(date)`**                                          | Is the date object at the moment of the base date object?        |
 | > **`is.laterThan(date)`**                                       | Is the date object later than the base date object?              |
 | > **`is.atEarliest(date)`**                                      | Is the date object at earliest the base date object?             |
-| > **`is.earlierThen(date)`**                                     | Is the date object earlier then the base date object?            |
+| > **`is.earlierThan(date)`**                                     | Is the date object earlier than the base date object?            |
 | > **`is.atLatest(date)`**                                        | Is the date object at latest the base date object?               |
 
 

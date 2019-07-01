@@ -2,7 +2,7 @@ import {
   moment,
   laterThan,
   atEarliest,
-  earlierThen,
+  earlierThan,
   atLatest,
 } from 'semantic-validator/lib/is/time';
 
@@ -44,15 +44,15 @@ describe('time validator creators', () => {
     });
   });
 
-  describe('is: earlier then', () => {
-    it('should return true when the date object is earlier then the base', () => {
-      expect(earlierThen(new Date(1500000000000))(new Date(1499999999999))).toBe(true);
+  describe('is: earlier than', () => {
+    it('should return true when the date object is earlier than the base', () => {
+      expect(earlierThan(new Date(1500000000000))(new Date(1499999999999))).toBe(true);
     });
-    it('should return false when the date object is not earlier then the base', () => {
-      expect(earlierThen(new Date(1500000000000))(new Date(1500000000000))).toBe(false);
-      expect(earlierThen(new Date(1500000000000))(new Date(1500000000001))).toBe(false);
-      expect(earlierThen(new Date(1500000000000))(new Date('invalid date'))).toBe(false);
-      expect(earlierThen(new Date(1500000000000))(123 as any)).toBe(false);
+    it('should return false when the date object is not earlier than the base', () => {
+      expect(earlierThan(new Date(1500000000000))(new Date(1500000000000))).toBe(false);
+      expect(earlierThan(new Date(1500000000000))(new Date(1500000000001))).toBe(false);
+      expect(earlierThan(new Date(1500000000000))(new Date('invalid date'))).toBe(false);
+      expect(earlierThan(new Date(1500000000000))(123 as any)).toBe(false);
     });
   });
 

@@ -94,6 +94,7 @@ validate({ id: 'abc', name: 'Agent K' }); // => false;
 | > **`op.toSplit(separator, validator)`**                         | Pass the validator after splitted the string as an array.        |
 | > **`op.toKeys(validator)`**                                     | Pass the validator after converted to keys of an object.         |
 | > **`op.toValues(validator)`**                                   | Pass the validator after converted to values of an object.       |
+| > **`op.toDate(validator)`**                                     | Pass the validator after converted to a date object.             |
 | **Basic validator creators**                                     |                                                                  |
 | > **`is.same(value)`**                                           | Is the same as the base value?                                   |
 | > **`is.oneOf(...values)`**                                      | Is the same as any base values?                                  |
@@ -130,6 +131,12 @@ validate({ id: 'abc', name: 'Agent K' }); // => false;
 | > **`is.excludes(...excludings)`**                               | Is the array excludes all excludings?                            |
 | > **`is.restrictedBy(...allowedItems)`**                         | Is the array only includes allowed items?                        |
 | > **`is.distinct()`**                                            | Is items of the array are all different?                         |
+| **Date validator creators**                                      |                                                                  |
+| > **`is.moment(date)`**                                          | Is the date object at the moment of the base date object?        |
+| > **`is.laterThan(date)`**                                       | Is the date object later than the base date object?              |
+| > **`is.atEarliest(date)`**                                      | Is the date object at earliest the base date object?             |
+| > **`is.earlierThen(date)`**                                     | Is the date object earlier then the base date object?            |
+| > **`is.atLatest(date)`**                                        | Is the date object at latest the base date object?               |
 
 
 ### Validator operator reference

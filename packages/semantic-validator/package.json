@@ -1,6 +1,6 @@
 {
   "name": "semantic-validator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A functional semantic validator tool for validation of several types and rich content.",
   "author": "ChenZi <chenzi@ubun.tw>",
   "license": "MIT",

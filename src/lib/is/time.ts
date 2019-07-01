@@ -36,7 +36,7 @@ export const atEarliest = (base: Date): Validator<Date> => {
   );
 };
 
-export const earlierThen = (base: Date): Validator<Date> => {
+export const earlierThan = (base: Date): Validator<Date> => {
   if (!isValidDate(base)) {
     return falsyValidator;
   }

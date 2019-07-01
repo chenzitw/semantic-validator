@@ -20,7 +20,7 @@ export const haveSameObjectKeys = (base: object, compare: object): boolean => (t
 );
 
 export const isShapeOrExactValidation = (validation: any): validation is object => (true
-  || (typeof validation !== 'object')
-  || (validation === null)
-  || Object.keys(validation).every(validator => typeof validator === 'function')
+  && (typeof validation === 'object')
+  && (validation !== null)
+  && Object.values(validation).every(validator => typeof validator === 'function')
 );

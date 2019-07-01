@@ -4,7 +4,7 @@ import {
   atEarliest,
   earlierThen,
   atLatest,
-} from 'semantic-validator/is/time';
+} from 'semantic-validator/lib/is/time';
 
 describe('time validator creators', () => {
   describe('is: moment', () => {

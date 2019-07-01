@@ -8,7 +8,6 @@ export const enhancedObjectEntries = Object.entries as <T>(o: T) => [keyof T, T[
  * isSameValueZero
  * Refer from [repo](https://github.com/domenic/especially/blob/master/abstract-operations.js#L126).
  */
-/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 export const isSameValueZero = (x: any, y: any): boolean => (
   ((x === 0) && (y === 0)) || Object.is(x, y)
 );

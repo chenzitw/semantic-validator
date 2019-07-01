@@ -1,4 +1,3 @@
-/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 export type Validator<T = any> = (val: T) => boolean;
 
 export type SomeObject = {
@@ -13,5 +12,4 @@ export type ExactValidation<T extends SomeObject> = {
   [K in keyof T]: Validator<T[K]>;
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 export type SomeFunction = (args: any[]) => any;

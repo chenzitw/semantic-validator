@@ -40,3 +40,14 @@ export const lengthConverter = (val: string | any[]): number => {
 export const keysConverter = Object.keys as (<T extends object>(val: T) => (keyof T)[]);
 
 export const valuesConverter = Object.values as (<T extends object>(val: T) => T[keyof T][]);
+
+export const dateConverter = (val: number): Date => {
+  if (!Number.isInteger(val)) {
+    throw new Error();
+  }
+  const date = new Date(val);
+  if (Number.isNaN(date.getTime())) {
+    throw new Error();
+  }
+  return date;
+};

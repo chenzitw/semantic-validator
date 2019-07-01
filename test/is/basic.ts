@@ -16,7 +16,7 @@ import {
   integer,
   array,
   date,
-} from 'semantic-validator/is/basic';
+} from 'semantic-validator/lib/is/basic';
 
 describe('basic validator creators', () => {
   describe('is: same', () => {

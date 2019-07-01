@@ -6,7 +6,8 @@ import {
   toSplit,
   toKeys,
   toValues,
-} from 'semantic-validator/op/converter';
+  toDate,
+} from 'semantic-validator/lib/op/converter';
 
 describe('converter validator operators', () => {
   describe('op: convert', () => {
@@ -18,6 +19,11 @@ describe('converter validator operators', () => {
         convert(
           (numeric: string) => parseFloat(numeric),
           is.greaterThan(100),
+        )('150'),
+      ).toBe(true);
+      expect(
+        convert(
+          (numeric: string) => parseFloat(numeric),
         )('150'),
       ).toBe(true);
     });
@@ -147,6 +153,20 @@ describe('converter validator operators', () => {
           every(is.integer()),
         )({ people: 640, seats: 'many' }),
       ).toBe(false);
+    });
+  });
+
+  describe('op: to date', () => {
+    const is = {
+      moment: (base: Date) => (date: Date) => (date.getTime() === base.getTime()),
+    };
+    it('should return true when successfully convert to a date object and validate', () => {
+      expect(toDate(is.moment(new Date(1561889036718)))(1561889036718)).toBe(true);
+    });
+    it('should return true when not successfully convert to a date object and validate', () => {
+      expect(toDate(is.moment(new Date(1561889036718)))(1500000000000)).toBe(false);
+      expect(toDate(is.moment(new Date(1561889036718)))('invalid date')).toBe(false);
+      expect(toDate(is.moment(new Date(1561889036718)))(123 as any)).toBe(false);
     });
   });
 });

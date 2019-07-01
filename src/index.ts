@@ -1,12 +1,7 @@
-import op from './op';
-import is from './is';
+import op from './lib/op';
+import is from './lib/is';
 
 export {
-  op,
-  is,
-};
-
-export default {
   op,
   is,
 };

@@ -7,6 +7,7 @@ import {
   lengthConverter,
   keysConverter,
   valuesConverter,
+  dateConverter,
 } from '../converters';
 
 export const convert = <T1, T2>(
@@ -49,4 +50,8 @@ export const toKeys = <T extends object>(validator?: Validator<(keyof T)[]>): Va
 
 export const toValues = <T extends object>(validator?: Validator<(T[keyof T])[]>): Validator<T> => (
   convert(valuesConverter, validator)
+);
+
+export const toDate = (validator?: Validator<Date>): Validator => (
+  convert(dateConverter, validator)
 );

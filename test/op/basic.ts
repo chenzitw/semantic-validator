@@ -7,7 +7,7 @@ import {
   some,
   shape,
   exact,
-} from 'semantic-validator/op/basic';
+} from 'semantic-validator/lib/op/basic';
 
 describe('basic validator operators', () => {
   describe('op: so', () => {
@@ -115,6 +115,12 @@ describe('basic validator operators', () => {
     });
     it('should return false when not all key validators returns true', () => {
       expect(
+        shape(123 as any)({
+          id: 123,
+          name: 'Mr. Sandman',
+        }),
+      ).toBe(false);
+      expect(
         shape({
           id: is.integer(),
           name: is.string(),
@@ -151,6 +157,12 @@ describe('basic validator operators', () => {
       ).toBe(true);
     });
     it('should return false when not all key validators returns true on exact object', () => {
+      expect(
+        exact(123 as any)({
+          id: 123,
+          name: 'Mr. Sandman',
+        }),
+      ).toBe(false);
       expect(
         exact({
           id: is.integer(),

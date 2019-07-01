@@ -8,7 +8,6 @@ export const enhancedObjectEntries = Object.entries as <T>(o: T) => [keyof T, T[
  * isSameValueZero
  * Refer from [repo](https://github.com/domenic/especially/blob/master/abstract-operations.js#L126).
  */
-/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 export const isSameValueZero = (x: any, y: any): boolean => (
   ((x === 0) && (y === 0)) || Object.is(x, y)
 );
@@ -21,7 +20,7 @@ export const haveSameObjectKeys = (base: object, compare: object): boolean => (t
 );
 
 export const isShapeOrExactValidation = (validation: any): validation is object => (true
-  || (typeof validation !== 'object')
-  || (validation === null)
-  || Object.keys(validation).every(validator => typeof validator === 'function')
+  && (typeof validation === 'object')
+  && (validation !== null)
+  && Object.values(validation).every(validator => typeof validator === 'function')
 );

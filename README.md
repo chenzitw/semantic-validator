@@ -1,7 +1,6 @@
 # Semantic Validator
 
-A functional semantic validator tool for validation of several types and rich content, 
-inspired by prop-types from React.  
+A functional semantic validator tool for validation of several types and rich content, inspired by prop-types from React.  
 
 [![npm version](https://badge.fury.io/js/semantic-validator.svg)](https://badge.fury.io/js/semantic-validator)
 [![Build Status](https://travis-ci.com/chenzitw/semantic-validator.svg?branch=master)](https://travis-ci.com/chenzitw/semantic-validator)
@@ -46,12 +45,12 @@ var validate = op.shape({
 
 ## Usage
 
-The base unit of semantic validator is a function which accepts the value as an argument for validation. We defines it in TypeScript:  
+The base unit of the semantic validator is a function which accepts the value as an argument for validation. We define it in TypeScript like below.  
 ```typescript
 type Validator<T = any> = (val: T) => boolean;
 ```
 
-This validator tool have several methods in two types: validator operator (op) and validator creator (is).  
+This validator tool has several methods in two types: validator operator (op) and validator creator (is).  
 
 For example, we can call a validator creator such as `is.integer()` to create a validator which expects the number should be an integer. We can also call `is.greaterThan(100)` to create a validator which expects the number is greater than 100.  
 If we want to match both conditions, we can use a validator operator like `op.and(validator1, validator2)` to combine two validators.  
@@ -127,7 +126,7 @@ validate({ id: 'abc', name: 'Agent K' }); // => false;
 | > **`is.object()`**                                              | Is a non null object?                                            |
 | > **`is.func()`**                                                | Is a function?                                                   |
 | > **`is.symbol()`**                                              | Is a symbol?                                                     |
-| > **`is.instanceOf(constructor)`**                               | Is an instance of the constructor (Class)?                       |
+| > **`is.instanceOf(constructor)`**                               | Is an instance of the constructor (class)?                       |
 | > **`is.float()`**                                               | Is a valid (not `NaN` or `Infinity`) float?                      |
 | > **`is.integer()`**                                             | Is a valid (not `NaN` or `Infinity`) integer?                    |
 | > **`is.array()`**                                               | Is an array?                                                     |

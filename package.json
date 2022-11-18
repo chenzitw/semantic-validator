@@ -35,7 +35,7 @@
     "tsconfig-paths": "^3.8.0",
     "typescript": "^3.5.2",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {}
 }
